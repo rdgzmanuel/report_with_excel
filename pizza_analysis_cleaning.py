@@ -17,7 +17,7 @@ def create_pizza_ingredients(df_pizza_types) -> Dict:
     return pizza_ingredients
 
 
-def create_ingredients(pizza_ingredients):
+def create_ingredients(pizza_ingredients) -> Dict:
     """
     Create a dictionary with the amount of each ingredient we need.
     By default it starts as 0.
@@ -261,7 +261,7 @@ def clean_order_details(pizza_ingredients, df_order_details):
     return df_order_details
 
 
-def create_informe(dfs):
+def create_inform(dfs):
     informe = {
         "column_name": [],
         "type": [],
@@ -285,7 +285,7 @@ if __name__ == "__main__":
     df_pizzas = pd.read_csv("pizzas.csv")
     df_pizza_types = pd.read_csv("pizza_types.csv", encoding="latin1")
 
-    create_informe([df_orders, df_order_details, df_pizzas, df_pizza_types])
+    create_inform([df_orders, df_order_details, df_pizzas, df_pizza_types])
 
     df_orders = df_orders.sort_values("order_id")
     df_orders = df_orders.reset_index(drop=True)
